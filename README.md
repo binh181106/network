@@ -1,4 +1,6 @@
+CHANGE TO CODE MODE FOR EASIER READING
 # network
+
 This is a "Facebook like" web. You can post your feed with one image and caption, follow and like the feeds.
 
 First, download all the file and open it (should be in VS CODE) for easier using. 
