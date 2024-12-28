@@ -1,0 +1,41 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+    {% block layout %}
+    {% if user.is_authenticated %}
+              <button class="nav-item btn btn-primary" id="appear-post-button" type="submit">Post your image</button>
+              {% endif %}
+    {% endblock %}
+    <!-- POST FORM-->
+    <div id="post-form" style="display: none">
+        <div><strong>New Post</strong></div>
+        <form enctype="multipart/form-data" id="form">
+            {% csrf_token %}
+            <textarea id="content" name="content" autocomplete="off" type="text" placeholder="What are you thinking?" required row="6" ></textarea>
+            <input id="image" name="image" autocomplete="off" type="file" placeholder="Upload your picture" accept="image/*">
+            <button id="submitthepost" name="submitthepost" type="button">Post</button>
+
+        </form>
+    </div>
+    <!--All Posts view-->
+    <div class="all-posts" style="display:none;" >
+    </div>
+
+    <!--Edit container-->
+    <div class="edit-overlay" id="edit-overlay">
+        <div class="edit-container" style="display:none;">
+            <div class="card">
+                <div class="card-body">
+                <div>
+                    <h5 class="card-title"><strong></strong></h5>
+                </div>
+                <textarea class="card-text edit-content"></textarea>
+                </div>
+                <img class="card-img-bottom" >
+                </div>
+                <button class="btn btn-primary" id="save-edit">Save</button>
+                <button class="btn btn-secondary" id="cancel-edit" style="margin-top:10px;">Cancel</button>
+        </div>
+    </div>      
+
+{% endblock %}

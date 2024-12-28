@@ -1,0 +1,254 @@
+body .all-posts{
+    font-family: Arial, sans-serif;
+    background-color: #e5eaec; 
+    margin:0;
+    padding: 0;
+}
+
+.body {
+    background-color: #e5e3e3;
+}
+
+.layout-container {
+    display: flex;
+}
+
+.layout-container button {
+    margin-right: 20px;
+    display: flex;
+    justify-self: flex-end;
+}
+.nav-item a:hover {
+    background-color: lightblue;
+}
+
+
+#form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 300px;
+    padding: 0 40px;
+}
+
+#form input {
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    outline: none;
+
+}
+
+#form textarea {
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    outline: none;
+    height: 55%;
+    resize: none;
+    font-size: 13px;
+    box-sizing: border-box;
+    top: 0;
+}
+
+#post-form {
+    background-color: #ccc;
+    position: absolute;
+    height: 460px;
+    width: 300px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.6s ease-in-out;
+    z-index: 20;
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+#content {
+    width: 100%;
+    height: 150px;
+}
+
+#image {
+    width: 100%;
+}
+
+#post-form div {
+    text-align: center;
+    font-weight: 700;
+    margin-top: 10px;
+    font-size: larger;
+}
+
+#post-form button {
+    border: none;
+    width: 70px;
+    height: 25px;
+    background-color: #512da8;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px transparent;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.all-posts {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin-top: 20px; 
+    margin: 20px auto;
+}
+
+/* Post container styling */
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 40px;
+}
+  
+  /* Each post */
+.post-container {
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+  }
+  
+  /* Header: Username and timestamp */
+.post-container .card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+  
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1877f2; /* Facebook's blue */
+    margin: 0;
+}
+  
+.card-text {
+    font-size: 14px;
+    margin: 0;
+    color: #4b4f56; /* Slightly dark gray */
+}
+  
+.card-text small {
+    font-size: 12px;
+    color: #8d949e; /* Lighter gray */
+  }
+  
+  /* Post image */
+.card-img-bottom {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+}
+  
+  /* Like and interaction section */
+.post-container .interactions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-top: 1px solid #e9ecef;
+    background-color: #f9fafb;
+}
+  
+.interactions div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+  
+.interactions svg {
+    fill: #8d949e;
+    width: 20px;
+    height: 20px;
+}
+  
+.interactions p {
+    font-size: 14px;
+    color: #8d949e;
+    margin: 0;
+}
+  
+.interactions div:hover svg,
+.interactions div:hover p {
+    color: #1877f2;
+    fill: #1877f2;
+}
+  
+  /* Divider between posts */
+.post-container + .post-container {
+    margin-top: 10px;
+    border-top: 1px solid #e9ecef;
+}
+
+.post-container:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .post-container {
+      width: 100%;
+      border-radius: 0;
+    }
+    .card-body {
+      padding: 10px;
+    }
+}
+
+/*PROFILE STYLE*/
+
+
+.profile-head {
+    transform: translateY(5rem)
+}
+
+.cover {
+    background-image: url(https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 230px;
+}
+
+body {
+    background: #654ea3;
+    background: linear-gradient(to right, #e96443, #904e95);
+    min-height: 100vh;
+    overflow-x:hidden;
+}
+  
+.row img {
+    max-width: 250px; 
+}
+
+.col-lg-6 img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: 5px; 
+}

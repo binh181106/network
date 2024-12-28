@@ -1,0 +1,75 @@
+{% extends 'network/layout.html' %}
+{% load static %}
+{% block script %}
+    <script src="{% static 'network/script/profile.js' %}" defer></script>
+{% endblock %}
+
+{% block body %}
+
+    <div class="row py-5 px-12">
+        <div class="col-md-5 mx-auto">
+             <!-- Profile widget --> 
+              <div class="bg-white shadow rounded overflow-hidden">
+                 <div class="px-4 pt-0 pb-4 cover">
+                     <div class="media align-items-end profile-head">
+                        <div class="profile mr-3">
+                            <img src="{{user_profile.avt.url}}" alt="{{user_profile.avt.url}}" width="130" class="rounded mb-2 img-thumbnail">
+                            {% if request.user != user_object %}
+                            
+                                <a href=""  id="follow-btn" data-user-id="{{user_object.id}}" class="btn btn-outline-dark btn-sm btn-block fo-un" style="margin-top:20px;" >
+                                    {% if has_follow == True %}
+                                    Unfollow
+                                    {% else %}
+                                    Follow
+                                    {% endif%}
+                                </a>
+                            {% endif %}
+                        </div> 
+                            <div class="media-body mb-5 text-white"> 
+                                <h4 class="mt-0 mb-0 profile-name" data-profile-id="{{user_profile.id}}" >{{user_profile.user.username}}</h4> 
+                                <p class="small mb-4"> <i class="fas fa-map-marker-alt mr-2"></p> 
+                            </div> 
+                        </div> 
+                    </div> 
+                    <div class="bg-light p-4 d-flex justify-content-end text-center">
+                         <ul class="list-inline mb-0">
+                             <li class="list-inline-item">
+                                <h5 class="font-weight-bold mb-0 d-block">{{user_posts_length}}</h5>
+                                    <small class="text-muted"> <i class="fas fa-image mr-1"></i>Posts</small></li> 
+                                <li class="list-inline-item"> <h5 class="font-weight-bold mb-0 d-block" id="follower-count">{{user_follower_count}}</h5>
+                                    <small class="text-muted"> <i class="fas fa-user mr-1"></i>Followers</small> </li>
+                                <li class="list-inline-item"> <h5 class="font-weight-bold mb-0 d-block">{{user_following_count}}</h5>
+                                    <small class="text-muted"> <i class="fas fa-user mr-1"></i>Following</small> </li> 
+                            </ul> 
+                        </div> 
+                        <div class="px-4 py-3"> 
+                            <h5 class="mb-0">About</h5> 
+                            <div class="p-4 rounded shadow-sm bg-light bio-box"> 
+                                <p class="font-italic mb-0">{{user_profile.bio}}</p> 
+                            </div> 
+                            {% if request.user == user_object %}
+                            <button class="btn btn-primary bio-btn">Change</button>
+                            {% endif %}
+                        </div> 
+                                <div class="py-4 px-4"> 
+                                    <div class="d-flex align-items-center justify-content-between mb-3"> 
+                                        <h5 class="mb-0">Recent photos</h5>
+                                        <a href="#" class="btn btn-link text-muted">Show all</a> 
+                                    </div>
+                                    <div class="row"> 
+                                        {% if user_posts %}
+                                        {% for user_post in user_posts %}
+                                        <div class="col-lg-6 mb-2 pr-lg-1" width="250" height="250">
+                                            <img src="{{user_post.image.url}}" alt="" class="img-fluid rounded shadow-sm" >
+                                        </div>
+                                        {% endfor %}
+                                        {% endif %}
+                                    </div> 
+                                </div> 
+                            </div>
+                            <div name="profile-id" value="{{user_profile.id}}" style="display:none;"></div>
+</div>
+
+
+
+{% endblock %}
