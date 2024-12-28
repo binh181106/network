@@ -1,5 +1,5 @@
 CHANGE TO CODE MODE FOR EASIER READING
-# network
+# network by DJANGO
 
 This is a "Facebook like" web. You can post your feed with one image and caption, follow and like the feeds.
 
